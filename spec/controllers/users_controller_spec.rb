@@ -13,7 +13,7 @@ describe UsersController do
     it "should create the user when given a valid name" do
       post :create, user: {name: "Jean-Gerard"}
       User.last.name.should == "Jean-Gerard"
-      response.should redirect_to result_path(id: User.last.id)
+      response.should redirect_to result_path(id: User.last.id, name: "jean-gerard")
     end
 
     it "should fail gracefully" do
