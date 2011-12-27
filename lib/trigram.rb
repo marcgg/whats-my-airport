@@ -1,22 +1,39 @@
 # encoding: utf-8
 
 module Trigram
-  def self.generate(name)
+  def self.generate(name, algorithm=:regular)
     return nil if name.nil?
     name = no_accents(name)
     words = name.split(" ")
     words = words.map{|w| w.split("-")}.flatten if [1,2].include? words.size
+    res = send("#{algorithm}_algorithm", name, words, algorithm)
+    res.nil? ? nil : res.upcase
+  end
+
+  def self.regular_algorithm(name, words, algorithm)
     case words.size
     when 1
-      res = words.first[0..2]
+      words.first[0..2]
     when 2
-      res = "#{words[0][0]}#{words[1][0..1]}"
+      "#{words[0][0]}#{words[1][0..1]}"
     when 3
-      res = words.map{|w| w[0]}.join("")
+      words.map{|w| w[0]}.join("")
     else
-      res = generate(remove_small_words(name))
+      generate(remove_small_words(name), algorithm)
     end
-    res.nil? ? nil : res.upcase
+  end
+
+  def self.alternative_algorithm(name, words, algorithm)
+    case words.size
+    when 1
+      words.first[0..2]
+    when 2
+      "#{words[0][0..1]}#{words[1][0]}"
+    when 3
+      "#{words[0][0]}#{words[2][0..1]}"
+    else
+      generate(remove_small_words(name), algorithm)
+    end
   end
 
   def self.remove_small_words(name)

@@ -13,7 +13,7 @@
 
 ActiveRecord::Schema.define(:version => 20111227115305) do
 
-  create_table "airports", :force => true do |t|
+  create_table "airports", :id => false, :force => true do |t|
     t.string   "code"
     t.string   "name"
     t.string   "city"
