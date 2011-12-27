@@ -11,12 +11,23 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111225213401) do
+ActiveRecord::Schema.define(:version => 20111227115305) do
+
+  create_table "airports", :force => true do |t|
+    t.string   "code"
+    t.string   "name"
+    t.string   "city"
+    t.string   "country"
+    t.string   "latitude"
+    t.string   "longitude"
+    t.string   "country_code"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
 
   create_table "users", :force => true do |t|
-    t.string   "first_name"
-    t.string   "middle_name"
-    t.string   "last_name"
+    t.string   "name"
+    t.string   "trigram"
     t.integer  "facebook_id"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
