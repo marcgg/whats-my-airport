@@ -13,10 +13,10 @@
 #main.results
 
   - if @user.airport.nil?
-    
+
     .no-airport
       .lcd
-        = "No airport found for #{h @user.name}!"
+        = "No airport found for #{h @user.name.titleize}!"
       %p
         = "Oh no! No airport exists with the code #{h @user.trigram} yet!"
       %p
@@ -24,12 +24,12 @@
         %a{ :href => "/" }<
           try again
         with another name!
-  
+
   -else
-  
+
     %h2
-      = "#{h @user.name}'s airport:"
-    
+      = "#{h @user.name.titleize}'s airport:"
+
     #trigram-wrapper
       #trigram{:class => @big_trigram ? "small" : ""}
         .letter.lcd<
@@ -39,7 +39,7 @@
         .letter.lcd<
           = @user.trigram[2]
       #map
-  
+
     #description
       %h3 Airport:
       .lcd
@@ -56,6 +56,6 @@
       %h3 Longitude:
       .lcd
         = @user.airport.longitude
-  
+
     #sharing
       / Specific sharing links
