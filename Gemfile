@@ -1,9 +1,12 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.0.rc1'
-gem 'sqlite3'
 gem "haml-rails"
 gem "haml"
+
+group :development, :test do
+  gem 'sqlite3'
+end
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.0'
