@@ -13,5 +13,6 @@ module AirportCodes
     config.encoding = "utf-8"
     config.assets.enabled = true
     config.assets.version = '1.0'
+    config.assets.precompile << /(^[^_]|\/[^_])[^\/]*/
   end
 end

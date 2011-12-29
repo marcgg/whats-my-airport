@@ -15,3 +15,6 @@
 /tmp
 config/database.yml
 .DS_Store
+
+# Ignore config
+config/services.yml

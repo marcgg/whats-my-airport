@@ -1,21 +1,60 @@
-!!!
-%html
-%head
-  %title= t("app_name")
+!!! 5
+<!--[if lt IE 7]> <html lang="en" class="no-js ie6 oldie"> <![endif]-->
+<!--[if IE 7]>    <html lang="en" class="no-js ie7 oldie"> <![endif]-->
+<!--[if IE 8]>    <html lang="en" class="no-js ie8 oldie"> <![endif]-->
+<!--[if gt IE 8]><!-->
+%html.no-js{ :lang => "en" }
+  <!--<![endif]-->
+  %head
+    %meta{ :charset => "utf-8" }/
 
-  %meta{:name => "title", :content => t("app_name")}
-  %meta{:name => "description", :content => "Create your own free photo portfolio with a custom design and link it to your Facebook, Flickr & Instagram accounts."}
+    %meta{ "http-equiv" => "X-UA-Compatible", :content => "IE=edge,chrome=1" }/
 
-  %meta{:property => "og:title",  :content => "f/Focused - Showcase your best photos"}
-  %meta{:property => "og:type",   :content => "website"}
-  %meta{:property => "og:url",    :content => "http://ffocused.com"}
-  %meta{:property => "og:image",  :content => "http://ffocused.com/images/home/centerpiece.png"}
+    %title= t("app_name")
+    %meta{:name => "title", :content => t("app_name")}/
+    %meta{:name => "description", :content => "Find your airport based on your name"}/
+    
+    %meta{:property => "og:title",  :content => "What's my airport - Find your airport based on your name"}/
+    %meta{:property => "og:type",   :content => "website"}
+    %meta{:property => "og:url",    :content => "http://whatsmyairport.com"}
+    %meta{:property => "og:image",  :content => "http://whatsmyairport.com/images/home/centerpiece.png"}
 
-  = javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"
+    %meta{ :name => "viewport", :content => "width=device-width, initial-scale=1.0" }/
 
-  = stylesheet_link_tag    "application", :media => "all" 
-  = javascript_include_tag "application"
-  = csrf_meta_tags
+    = stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Quantico'
+    = stylesheet_link_tag 'style', :media => 'all'
 
-%body
-  = yield
+    = csrf_meta_tags
+
+    = javascript_include_tag "modernizr.js"
+
+  %body
+    #container
+      = yield
+      %footer
+        #credits
+          &#9992;&nbsp;Made in CDG by 
+          = link_to "@marcgg", "http://www.twitter.com/marcgg", { :target => "_blank" }
+          and 
+          = link_to "@gflandre", "http://www.twitter.com/gflandre", { :target => "_blank" }
+        #global-share
+          / Sharing links go here
+
+    %script{ :src => "//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" }
+    %script
+      window.jQuery || document.write("<script src='js/jquery-1.7.1.min.js'>\x3C/script>")
+    
+    = yield :extra_js
+    = javascript_include_tag "application"
+
+    %script
+      var _gaq=[["_setAccount","UA-XXXXX-X"],["_trackPageview"],["_trackPageLoadTime"]];
+      (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;
+      g.src=("https:"==location.protocol?"//ssl":"//www")+".google-analytics.com/ga.js";
+      s.parentNode.insertBefore(g,s)}(document,"script"));
+
+    <!--[if lt IE 7]>
+    = javascript_include_tag "//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"
+    %script
+      window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})});
+    <![endif]-->

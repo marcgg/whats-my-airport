@@ -1,0 +1,13 @@
+$light-grey  : #ddd;
+$yellow      : #ffd800;
+
+$vertical-space: 40px;
+$small-vertical-space: 10px;
+$horizontal-space: 20px;
+
+$main-font: 'Quantico', cursive;
+$basic-font: 'Arial', sans-serif;
+
+@import "compass/reset";
+@import "compass/css3";
+@import "compass/utilities";

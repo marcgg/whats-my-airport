@@ -1,3 +1,61 @@
-%h2= @user.trigram
-Your airport is
-= debug @user.airport
+- if !@user.airport.nil?
+  - content_for :extra_js do
+    = javascript_include_tag "http://maps.googleapis.com/maps/api/js?key=#{GOOGLE_MAPS_JAVASCRIPT_API_KEY}&sensor=false"
+    %script
+      = "var latitude = '#{h @user.airport.latitude}';"
+      = "var longitude = '#{h @user.airport.longitude}';"
+
+%header.results
+  %h1
+    %a{ :href => "/" }
+      WHAT'S MY AIRPORT?
+
+#main.results
+
+  - if @user.airport.nil?
+    
+    .no-airport
+      .lcd
+        = "No airport found for #{h @user.name}!"
+      %p
+        = "Oh no! No airport exists with the code #{h @user.trigram} yet!"
+      %p
+        Let's
+        %a{ :href => "/" }<
+          try again
+        with another name!
+  
+  -else
+  
+    %h2
+      = "#{h @user.name}'s airport:"
+    
+    #trigram-wrapper
+      #trigram{:class => @big_trigram ? "small" : ""}
+        .letter.lcd<
+          = @user.trigram[0]
+        .letter.lcd<
+          = @user.trigram[1]
+        .letter.lcd<
+          = @user.trigram[2]
+      #map
+  
+    #description
+      %h3 Airport:
+      .lcd
+        = @user.airport.name
+      %h3 City:
+      .lcd
+        = @user.airport.city
+      %h3 Country:
+      .lcd
+        = @user.airport.country
+      %h3 Latitude:
+      .lcd
+        = @user.airport.latitude
+      %h3 Longitude:
+      .lcd
+        = @user.airport.longitude
+  
+    #sharing
+      / Specific sharing links

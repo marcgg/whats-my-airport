@@ -1,4 +1,14 @@
-%h1 Enter your name
-= form_for @user do |f|
-  = f.text_field :name
-  = f.submit
+%header.home
+  %h1 WHAT'S MY AIRPORT?
+
+#main.home
+  = form_for @user do |f|
+    = f.text_field :name, :placeholder => "Enter your name and find out"
+    = f.submit "", :id => "submit"
+
+  #explanation
+    %h3 Wait, what?
+    %p
+      We take your name, feed it to smart little robots who judge what its most significant letters are and turn it into an airport code...
+      %br/
+      and that's how you find out what your airport is!
