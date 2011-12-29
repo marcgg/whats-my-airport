@@ -49,10 +49,10 @@ header{
 
 #main{
   @include clearfix;
-  
+
   &.home{
     margin: 100px 0 90px 0;
-  
+
     #user_name{
       width: 691px;
       height: 40px;
@@ -183,6 +183,13 @@ header{
     #sharing{
       height: 30px;
       margin-bottom: $vertical-space;
+      
+      #___plusone_0{
+        margin-left: 10px !important;
+      }
+      #facebook{
+        margin-left: 10px !important;
+      }
     }
   }
 }
