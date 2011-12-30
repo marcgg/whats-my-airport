@@ -29,7 +29,7 @@ jQuery(document).ready ->
 # Google Maps initialization
 initialize = () ->
   latlng = new google.maps.LatLng latitude, longitude
-  options = 
+  options =
     zoom: 12
     center: latlng
     mapTypeId: google.maps.MapTypeId.ROADMAP
