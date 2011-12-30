@@ -7,12 +7,13 @@ big-logo.png: big-logo.png
 button-plane.png: button-plane.png
 rails.png: rails.png
 small-logo.png: small-logo.png
+admin.js: admin.js
 application.js: application.js
 modernizr.js: modernizr.js
 users.js: users.js
+admin.css: admin.css
 application.css: application.css
 ie.css: ie.css
-print.css: print.css
 screen.css: screen.css
 style.css: style.css
 jquery-ui.js: jquery-ui.js
