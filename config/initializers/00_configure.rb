@@ -2,7 +2,7 @@ if Rails.env == "production"
   puts "Loading Heroku variables"
   if ENV
     GOOGLE_MAPS_JAVASCRIPT_API_KEY = ENV["GOOGLE_MAPS_JAVASCRIPT_API_KEY"]
-    SHA1_PASSWORD = ENV["PASSWORD"]
+    SHA1_PASSWORD = ENV["SHA1_PASSWORD"]
   end
 else
   puts "Loading config variables from services.yml"
