@@ -35,6 +35,12 @@ describe User do
     end
   end
 
+  it "should know if the trigram is big or not regarding the size of letters" do
+    User.new(:trigram => "III").has_big_trigram?.should be_false
+    User.new(:trigram => "MMM").has_big_trigram?.should be_true
+    User.new(:trigram => "WWW").has_big_trigram?.should be_true
+  end
+
   it "should validate presence of name" do
     User.new.should_not be_valid
     User.new(name: "Bob").should be_valid

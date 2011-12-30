@@ -15,4 +15,8 @@ class User < ActiveRecord::Base
     end
     self.trigram = trigram
   end
+
+  def has_big_trigram?
+    trigram =~ /.*(M|W).*/i
+  end
 end

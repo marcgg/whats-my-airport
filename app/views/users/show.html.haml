@@ -31,7 +31,7 @@
       = "#{h @user.name.titleize}'s airport:"
 
     #trigram-wrapper
-      #trigram{:class => @big_trigram ? "small" : ""}
+      #trigram{:class => @user.has_big_trigram? ? "small" : ""}
         .letter.lcd<
           = @user.trigram[0]
         .letter.lcd<

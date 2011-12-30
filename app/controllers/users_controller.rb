@@ -14,6 +14,5 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @big_trigram = @user.trigram =~ /.*(M|W).*/i
   end
 end
