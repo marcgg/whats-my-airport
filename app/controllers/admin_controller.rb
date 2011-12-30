@@ -24,7 +24,7 @@ class AdminController < ApplicationController
       session[:is_admin] = true
       redirect_to admin_path
     else
-      session[:is_admid] = false
+      session[:is_admin] = false
       redirect_to admin_path(:error => "Invalid Password")
     end
   end
