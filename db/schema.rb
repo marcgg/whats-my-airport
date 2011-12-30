@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111227115305) do
+ActiveRecord::Schema.define(:version => 20111230222905) do
 
   create_table "airports", :id => false, :force => true do |t|
     t.string   "code"
@@ -29,8 +29,9 @@ ActiveRecord::Schema.define(:version => 20111227115305) do
     t.string   "name"
     t.string   "trigram"
     t.integer  "facebook_id"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",                 :null => false
+    t.datetime "updated_at",                 :null => false
+    t.integer  "hits",        :default => 0
   end
 
 end

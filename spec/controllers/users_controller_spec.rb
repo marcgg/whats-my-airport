@@ -26,13 +26,15 @@ describe UsersController do
 
   describe "GET show" do
     before(:each) do
-      @user = User.create!(name: "Hey")
+      @user = User.create!(name: "Hey", hits: 0)
     end
 
-    it "should show the given user" do
+    it "should show the given user and increment stats" do
       get :show, id: @user.id, name: "hey"
       response.should be_success
       assigns(:user).should == @user
+      @user.reload
+      @user.hits.should == 1
     end
 
     it "should redirect to home if the name is not present" do

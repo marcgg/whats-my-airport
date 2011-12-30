@@ -19,4 +19,9 @@ class User < ActiveRecord::Base
   def has_big_trigram?
     trigram =~ /.*(M|W).*/i
   end
+
+  def increment_hits!
+    puts "increment_hits"
+    update_attributes!(hits: hits + 1)
+  end
 end
