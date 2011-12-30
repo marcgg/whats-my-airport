@@ -1,0 +1,23 @@
+---
+bg-button.png: bg-button.png
+bg-gradient.png: bg-gradient.png
+bg-input.png: bg-input.png
+bg-lcd.gif: bg-lcd.gif
+big-logo.png: big-logo.png
+button-plane.png: button-plane.png
+rails.png: rails.png
+small-logo.png: small-logo.png
+application.js: application.js
+modernizr.js: modernizr.js
+users.js: users.js
+application.css: application.css
+ie.css: ie.css
+print.css: print.css
+screen.css: screen.css
+style.css: style.css
+jquery-ui.js: jquery-ui.js
+jquery-ui.min.js: jquery-ui.min.js
+jquery.js: jquery.js
+jquery.min.js: jquery.min.js
+jquery_ujs.js: jquery_ujs.js
+coffee-script.js: coffee-script.js
