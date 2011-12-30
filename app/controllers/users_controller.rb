@@ -15,6 +15,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     redirect_to root_path if params[:name] != @user.name.parameterize
+    @user.increment_hits!
   end
 
 end

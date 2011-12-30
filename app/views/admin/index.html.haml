@@ -10,11 +10,13 @@
       %th Created At
       %th Name
       %th Airport?
+      %th Hits
     - @users.each do |user|
       %tr{class: cycle("odd", "even")}
         %td= user.created_at.strftime("%d/%m %H:%M")
         %td= user.name
         %td= user.airport.nil? ? "Missing (#{user.trigram})" : ""
+        %td= user.hits
 
 - else
   = form_tag(admin_path, :method => :get) do
