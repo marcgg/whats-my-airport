@@ -13,7 +13,7 @@
     %title= t("app_name")
     %meta{:name => "title", :content => t("app_name")}/
     %meta{:name => "description", :content => "Find your airport based on your name"}/
-    
+
     %meta{:property => "og:title",  :content => "What's my airport - Find your airport based on your name"}/
     %meta{:property => "og:type",   :content => "website"}
     %meta{:property => "og:url",    :content => "http://whatsmyairport.com"}
@@ -23,6 +23,7 @@
 
     = stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Quantico'
     = stylesheet_link_tag 'style', :media => 'all'
+    = stylesheet_link_tag 'admin', :media => 'all' if controller.controller_name == "admin"
 
     = csrf_meta_tags
 
@@ -33,7 +34,7 @@
       = yield
       %footer
         #credits
-          &#9992;&nbsp;Made in CDG by 
+          &#9992;&nbsp;Made in CDG by
           = link_to "@marcgg", "http://www.twitter.com/marcgg", { :target => "_blank" }
           and 
           = link_to "@gflandre", "http://www.twitter.com/gflandre", { :target => "_blank" }
@@ -48,9 +49,9 @@
       window.jQuery || document.write("<script src='js/jquery-1.7.1.min.js'>\x3C/script>")
 
     = yield :extra_js
-    = javascript_include_tag "application"
+    = javascript_include_tag "application" unless controller.controller_name == "admin"
 
-    / Google plus
+    - # Google plus
     %script
       window.___gcfg = {lang: 'en'};
       (function() {
@@ -58,8 +59,8 @@
       po.src = 'https://apis.google.com/js/plusone.js';
       var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
       })();
-      
-    / Twitter
+
+    - #Twitter
     %script
       !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
 

@@ -1,2 +1,5 @@
 google_maps:
-  javascript_api_key: YOUR_API_KEY
+  javascript_api_key: "YOUR_API_KEY"
+
+wma:
+  password: "PASSWORD"

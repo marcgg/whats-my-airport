@@ -1,0 +1,43 @@
+// Place all the styles related to the admin controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+a{
+  color: yellow;
+  padding: 20px 0px;
+  display: inline-block;
+}
+a:hover{
+  text-decoration: none;
+}
+
+form{
+  margin: 20px 0px;
+  input[type="password"]{
+    padding: 5px 10px;
+  }
+  input[type="button"]{
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+  }
+}
+
+table{
+  font-size: 0.8em;
+  margin: 20px auto;
+  width: 100%;
+  tr{
+    padding: 5px 0px;
+  }
+  td{
+    padding: 3px 5px;
+  }
+  th{
+    padding: 10px 5px;
+    font-weight: bold;
+    background-color: #161616;
+  }
+  .odd{
+    background-color: #262626;
+  }
+}

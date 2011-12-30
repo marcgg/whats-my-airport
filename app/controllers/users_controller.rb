@@ -16,4 +16,5 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     redirect_to root_path if params[:name] != @user.name.parameterize
   end
+
 end
