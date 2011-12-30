@@ -21,7 +21,6 @@ class User < ActiveRecord::Base
   end
 
   def increment_hits!
-    puts "increment_hits"
-    update_attributes!(hits: hits + 1)
+    update_attributes!(hits: (hits + 1))
   end
 end
