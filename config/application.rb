@@ -14,5 +14,6 @@ module AirportCodes
     config.assets.enabled = true
     config.assets.version = '1.0'
     config.assets.precompile << /(^[^_]|\/[^_])[^\/]*/
+    config.filter_parameters += [:password]
   end
 end
