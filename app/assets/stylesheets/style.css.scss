@@ -180,15 +180,41 @@ header{
       }
     }
 
-    #sharing{
-      height: 30px;
-      margin-bottom: $vertical-space;
+    #more-links{
+      @include clearfix;
+      margin-bottom: 80px;
       
-      #___plusone_0{
-        margin-left: 10px !important;
+      #sharing{
+        height: 30px;
+        width: 400px;
+        float: left;
+
+        #___plusone_0{
+          margin-left: 10px !important;
+        }
+        #facebook{
+          margin-left: 10px !important;
+        }
       }
-      #facebook{
-        margin-left: 10px !important;
+    
+      #home-link{
+        width: 400px;
+        float: right;
+        text-align: right;
+
+        a{
+          display: block;
+          float: right;
+          color: #363636;
+          text-decoration: none;
+          padding: 3px 8px;
+          background: url('/assets/bg-small-button.png') top left repeat-x $yellow;
+          font-size: 18px;
+          border: 2px solid $yellow;
+          @include border-radius(5px);
+          @include box-shadow(3px 3px 3px 0 rgba(#1f1f1f, 0.5));
+          @include text-shadow(#FFF 1px 1px 1px);
+        }
       }
     }
   }
