@@ -6,13 +6,13 @@ class User < ActiveRecord::Base
   before_create :generate_trigram
 
   def generate_trigram
-    trigram = Trigram.generate(name)
-    airport = Airport.first(conditions: {code: trigram})
-    if airport.nil?
-      second_trigram = Trigram.generate(name, :alternative)
-      airport = Airport.first(conditions: {code: second_trigram})
-      trigram = second_trigram if airport
+    trigram, airport = nil, nil
+    [:regular, :alternative, :only_last, :only_first].each do |algorithm|
+      trigram = Trigram.generate(name, algorithm)
+      airport = Airport.first(conditions: {code: trigram})
+      break if airport
     end
+    trigram = Trigram.generate(name) unless airport
     self.trigram = trigram
   end
 

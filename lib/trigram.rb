@@ -36,6 +36,14 @@ module Trigram
     end
   end
 
+  def self.only_first_algorithm(name, words, algorithm)
+    words.first[0..2]
+  end
+
+  def self.only_last_algorithm(name, words, algorithm)
+    words.last[0..2]
+  end
+
   def self.remove_small_words(name)
     res = name.split(" ").select{|w| w.size > 2}
     res = [res[0], res[1], res.last] if res.size > 3
