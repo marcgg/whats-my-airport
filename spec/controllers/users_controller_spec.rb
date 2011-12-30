@@ -30,9 +30,20 @@ describe UsersController do
     end
 
     it "should show the given user" do
-      get :show, id: @user.id
+      get :show, id: @user.id, name: "hey"
       response.should be_success
       assigns(:user).should == @user
     end
+
+    it "should redirect to home if the name is not present" do
+      get :show, id: @user.id
+      response.should redirect_to root_path
+    end
+
+    it "should redirect to home if the name is not present" do
+      get :show, id: @user.id, name: "Bob"
+      response.should redirect_to root_path
+    end
+
   end
 end
