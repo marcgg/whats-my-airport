@@ -1,1 +1,5 @@
 Runs on Ruby 1.9.3
+
+Heroku is annoying, so run the following command and then commit.
+
+  bundle exec rake assets:precompile RAILS_ENV=development
