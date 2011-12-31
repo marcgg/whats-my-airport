@@ -10,11 +10,11 @@
 
     %meta{ "http-equiv" => "X-UA-Compatible", :content => "IE=edge,chrome=1" }/
 
-    %title= t("app_name")
-    %meta{:name => "title", :content => t("app_name")}/
-    %meta{:name => "description", :content => "Find your airport based on your name"}/
+    %title= dynamic_title @user.name
+    %meta{:name => "title", :content => dynamic_title(@user.name)}/
+    %meta{:name => "description", :content => t(".description", :name => (@user.name ? "#{@user.name}'s airport. " : nil))}/
 
-    %meta{:property => "og:title",  :content => "What's my airport - Find your airport based on your name"}/
+    %meta{:property => "og:title",  :content => dynamic_title(@user.name)}/
     %meta{:property => "og:type",   :content => "website"}
     %meta{:property => "og:url",    :content => "http://whatsmyairport.com"}
     %meta{:property => "og:image",  :content => "http://whatsmyairport.com/images/home/centerpiece.png"}
