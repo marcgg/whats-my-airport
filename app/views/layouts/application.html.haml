@@ -64,13 +64,7 @@
     %script
       !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
 
-    - if Rails.env == "production"
-      %script
-        :plain
-          var _gaq=[['_setAccount','#{GOOGLE_ANALYTICS_ACCOUNT_NUMBER}'],['_trackPageview'],['_trackPageLoadTime']];
-          (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;
-          g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-          s.parentNode.insertBefore(g,s)}(document,'script'));
+    = render :partial => "/shared/analytics"
 
     <!--[if lt IE 7]>
     = javascript_include_tag "//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"
