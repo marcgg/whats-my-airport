@@ -1,5 +1,8 @@
 google_maps:
   javascript_api_key: "YOUR_API_KEY"
 
+google_analytics:
+  account_number: "YOUR_ACCOUNT_NUMBER"
+
 wma:
   password: "PASSWORD"
