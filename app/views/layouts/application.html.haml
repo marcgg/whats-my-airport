@@ -16,8 +16,8 @@
 
     %meta{:property => "og:title",  :content => dynamic_title(@user.name)}/
     %meta{:property => "og:type",   :content => "website"}
-    %meta{:property => "og:url",    :content => "http://whatsmyairport.com"}
-    %meta{:property => "og:image",  :content => "http://whatsmyairport.com/images/home/centerpiece.png"}
+    %meta{:property => "og:url",    :content => root_url}
+    %meta{:property => "og:image",  :content => "#{root_url}assets/social-logo.jpg"}
 
     = stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Quantico'
     = stylesheet_link_tag 'style', :media => 'all'
