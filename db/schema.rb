@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111230222905) do
+ActiveRecord::Schema.define(:version => 20111231091726) do
 
   create_table "airports", :id => false, :force => true do |t|
     t.string   "code"
@@ -33,5 +33,7 @@ ActiveRecord::Schema.define(:version => 20111230222905) do
     t.datetime "updated_at",                 :null => false
     t.integer  "hits",        :default => 0
   end
+
+  add_index "users", ["name"], :name => "index_users_on_name", :unique => true
 
 end
