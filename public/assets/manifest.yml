@@ -9,6 +9,7 @@ button-plane.png: button-plane.png
 micro-plane.gif: micro-plane.gif
 rails.png: rails.png
 small-logo.png: small-logo.png
+social-logo.jpg: social-logo.jpg
 admin.js: admin.js
 application.js: application.js
 modernizr.js: modernizr.js
@@ -17,6 +18,7 @@ admin.css: admin.css
 application.css: application.css
 ie.css: ie.css
 screen.css: screen.css
+small-screen.css: small-screen.css
 style.css: style.css
 jquery-ui.js: jquery-ui.js
 jquery-ui.min.js: jquery-ui.min.js

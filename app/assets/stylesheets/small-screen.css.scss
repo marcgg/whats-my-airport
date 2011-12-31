@@ -1,0 +1,115 @@
+@import "compass/css3";
+@import "compass/utilities";
+
+@media only screen and (max-width: 480px), only screen and (max-device-width: 480px) {
+  
+  body{
+    font-family: 'Arial', sans-serif;
+  }
+
+  #container{
+    width:100%;
+  }
+
+  header.home{
+    background: none;
+    padding-top: 0px;
+    h1{
+      font-size: 50px;
+    }
+  }
+
+  header.results{
+    h1 a{
+      background: none;
+      padding-left: 0px;
+      font-size: 50px;
+    }
+  }
+
+  #main.home{
+    margin: 40px 0 40px ;
+    text-align: center;
+
+    #user_name{
+      width: auto;
+      float: none;
+    }
+
+    #submit{
+      float: none;
+      margin-top: 10px;
+    }
+
+    #explanation{
+      width: auto;
+    }
+  }
+
+  #main.results{
+
+    h2{ text-align: center; margin-bottom: 0px; }
+
+    #trigram-wrapper{
+      text-align: center;
+
+      #trigram{
+        width: auto;
+        float: none;
+        padding-left: 10px;
+
+        .letter{
+          font-size: 150px;
+          width: auto;
+          background: none;
+          @include box-shadow(#363636 0px 0px 0px);
+          margin-right: 0px;
+          height: auto;
+          line-height: 150px;
+        }
+      }
+    }
+
+    #description{
+      h3{ padding-left: 10px; }
+    }
+
+    #more-links{
+      #sharing{
+        text-align: center;
+        float: none;
+        width: auto;
+        height: auto;
+      }
+
+      #home-link{
+        float: none;
+        width: auto;
+        text-align: center;
+        margin-top: 20px;
+        
+        a{
+          float: none;
+          margin:auto;
+        }
+      }
+    }
+    
+  }
+
+  footer{
+    text-align: center;
+
+    #credits{
+      float: none;
+      width: auto;
+    }
+
+    #global-share{
+      float: none;
+      width: auto;
+      margin-top: 30px;
+    }
+  }
+
+}

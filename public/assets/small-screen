@@ -1,0 +1,7 @@
+@media only screen and (max-width: 480px), only screen and (max-device-width: 480px) {
+
+body{
+  background: red;
+}
+
+}
