@@ -231,9 +231,11 @@ footer{
     font-family: $basic-font;
     font-size: 12px;
     float: left;
+    padding-left: 15px;
+    background: url('/assets/micro-plane.gif') top left no-repeat transparent;
     width: 410px;
     
-    a{ @include hover-link; color: $light-grey; }
+    a{ @include hover-link; color: $light-grey; }    
   }
   
   #global-share{
