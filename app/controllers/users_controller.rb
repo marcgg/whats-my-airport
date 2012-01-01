@@ -4,7 +4,8 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.find_or_create_by_name(params[:user])
+    @user = User.find_by_name(params[:user][:name])
+    @user = User.new(params[:user]) if @user.nil?
     if @user.save
       redirect_to result_path(id: @user.id, name: @user.name.parameterize)
     else

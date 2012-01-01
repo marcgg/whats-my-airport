@@ -16,6 +16,13 @@ describe UsersController do
       response.should redirect_to result_path(id: User.last.id, name: "jean-gerard")
     end
 
+    it "should not create the same user several times based on its name" do
+      post :create, user: {name: "Jean-Gerard"}
+      lambda{
+        post :create, user: {name: "Jean-Gerard"}
+      }.should_not change(User, :count)
+    end
+
     it "should fail gracefully" do
       lambda{
         post :create, user: {}
