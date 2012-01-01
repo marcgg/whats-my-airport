@@ -1,0 +1,23 @@
+!!! 5
+%html
+  %head
+    %meta{ :charset => "utf-8" }/
+
+    = stylesheet_link_tag 'style', :media => 'all'
+    = stylesheet_link_tag 'admin', :media => 'all'
+
+    = csrf_meta_tags
+
+    %title Admin
+
+  %body
+    #container
+      %header.results
+        %h1
+          %a{ :href => admin_path } ADMIN
+      - if session[:is_admin] == true
+        = link_to "Users", admin_path
+        = link_to "Airports", airports_path
+        = link_to "Logout", logout_path
+
+      = yield

@@ -1,24 +1,13 @@
-%header.results
-  %h1
-    %a{ :href => admin_path } ADMIN
+%table
+  %tr
+    %th Created At
+    %th Name
+    %th Airport?
+    %th Hits
+  - @users.each do |user|
+    %tr{ class: cycle("odd", "even") }
+      %td= user.created_at.strftime("%d/%m %H:%M")
+      %td= user.name
+      %td= user.airport.nil? ? "Missing (#{user.trigram})" : ""
+      %td= user.hits
 
-- if @logged_in
-  = link_to "Logout", logout_path
-
-  %table
-    %tr
-      %th Created At
-      %th Name
-      %th Airport?
-      %th Hits
-    - @users.each do |user|
-      %tr{class: cycle("odd", "even")}
-        %td= user.created_at.strftime("%d/%m %H:%M")
-        %td= user.name
-        %td= user.airport.nil? ? "Missing (#{user.trigram})" : ""
-        %td= user.hits
-
-- else
-  = form_tag(admin_path, :method => :get) do
-    = password_field_tag :password
-    = submit_tag "Login"

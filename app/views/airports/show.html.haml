@@ -1,0 +1,11 @@
+= debug @airport
+
+= form_for @airport, :url => airport_path(code: @airport.code)  do |f|
+  = f.label :latitude
+  = f.text_field :latitude
+
+  = f.label :longitude
+  = f.text_field :longitude
+
+  = f.submit
+

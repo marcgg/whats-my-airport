@@ -1,0 +1,5 @@
+%table
+  - @airports.each do |airport|
+    %tr
+      %td= airport.code
+      %td= link_to airport.name, airport_path(id: airport.code)

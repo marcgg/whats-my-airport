@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111231091726) do
+ActiveRecord::Schema.define(:version => 20120101220758) do
 
   create_table "airports", :id => false, :force => true do |t|
     t.string   "code"
@@ -24,6 +24,8 @@ ActiveRecord::Schema.define(:version => 20111231091726) do
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
   end
+
+  add_index "airports", ["code"], :name => "index_airports_on_code"
 
   create_table "users", :force => true do |t|
     t.string   "name"

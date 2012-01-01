@@ -1,20 +1,17 @@
 class AdminController < ApplicationController
+  before_filter :check_session, :except => [:login, :logout]
+
   def logout
     session[:is_admin] = false
     redirect_to admin_path
   end
 
+  def login
+    authenticate if params[:password]
+  end
+
   def index
-    if params[:password]
-      authenticate
-    else
-      if session[:is_admin] == true
-        @logged_in = true
-        @users = User.all(:order => "created_at DESC")
-      else
-        @logged_in = false
-      end
-    end
+    @users = User.all(:order => "created_at DESC")
   end
 
   protected
