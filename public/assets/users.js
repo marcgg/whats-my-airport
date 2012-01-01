@@ -32,7 +32,7 @@
     var latlng, map, marker, options;
     latlng = new google.maps.LatLng(latitude, longitude);
     options = {
-      zoom: 12,
+      zoom: 6,
       center: latlng,
       mapTypeId: google.maps.MapTypeId.ROADMAP
     };
