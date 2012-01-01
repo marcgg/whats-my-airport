@@ -70,7 +70,8 @@
           po.src = 'https://apis.google.com/js/plusone.js';
           var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
           })();
-        %iframe{ :id => "facebook", :src => "//www.facebook.com/plugins/like.php?href&amp;send=false&amp;layout=standard&amp;width=225&amp;show_faces=false&amp;action=like&amp;colorscheme=dark&amp;font&amp;height=24", :scrolling => "no", :frameborder => "0", :style => "border:none; overflow:hidden; width:225px; height:24px;", :allowTransparency =>"true" }
-
       #home-link
         = link_to 'Try another one!', root_path
+:plain
+  <iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwhatsmyairport.com%2F#{params[:name]}%2F#{params[:id]}&amp;send=false&amp;layout=standard&amp;width=450&amp;show_faces=false&amp;action=like&amp;colorscheme=dark&amp;font&amp;height=35" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height:35px;" allowTransparency="true"></iframe>
+
