@@ -4,7 +4,6 @@
 en:
   app_name: "What's my Airport | Find your airport based on your name"
 
-  layouts:
-    application:
-      title: "%{name}What's my Airport - Find your airport based on your name"
-      description: "%{name}Find your airport based on your name"
+  application:
+    title: "%{name}What's my Airport - Find your airport based on your name"
+    description: "%{name}Find your airport based on your name"

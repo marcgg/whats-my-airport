@@ -1,6 +1,6 @@
 %title= dynamic_title @user.name
 %meta{:name => "title", :content => dynamic_title(@user.name)}/
-%meta{:name => "description", :content => t(".description", :name => (@user.name ? "#{@user.name}'s airport. " : nil))}/
+%meta{:name => "description", :content => t("application.description", :name => (@user.name ? "#{@user.name}'s airport. " : nil))}/
 
 %meta{:property => "og:title",  :content => dynamic_title(@user.name)}/
 %meta{:property => "og:type",   :content => "website"}
