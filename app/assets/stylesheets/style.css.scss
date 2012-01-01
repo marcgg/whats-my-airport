@@ -187,8 +187,8 @@ header{
       margin-bottom: 80px;
       
       #sharing{
-        height: 30px;
-        width: 400px;
+        height: 35px;
+        width: 600px;
         float: left;
 
         #___plusone_0{
@@ -200,7 +200,7 @@ header{
       }
     
       #home-link{
-        width: 400px;
+        width: 200px;
         float: right;
         text-align: right;
 
@@ -235,7 +235,7 @@ footer{
     float: left;
     padding-left: 15px;
     background: url('/assets/micro-plane.gif') top left no-repeat transparent;
-    width: 410px;
+    width: 390px;
     
     a{ @include hover-link; color: $light-grey; }    
   }
