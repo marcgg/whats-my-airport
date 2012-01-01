@@ -29,13 +29,9 @@
         #credits
           Made in CDG by
           = link_to "@marcgg", "http://www.twitter.com/marcgg", { :target => "_blank" }
-          and 
+          and
           = link_to "@gflandre", "http://www.twitter.com/gflandre", { :target => "_blank" }
-        #global-share
-          %iframe{ :src => "//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.whatsmyairport.com&amp;send=false&amp;layout=button_count&amp;width=90&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;height=20", :scrolling => "no", :frameborder => "0", :style => "border:none; overflow:hidden; width:90px; height:20px;", :allowTransparency => "true" }
-          %a{ :href => "https://twitter.com/share", :class => "twitter-share-button", "data-url" => "http://www.whatsmyairport.com", "data-text" => "What's my Airport | Find your airport based on your name", "data-hashtags" => "whatsmyairport" }
-            Tweet
-          %g:plusone{ :size => "medium" }
+        = render :partial => "/shared/sharing"
 
     %script{ :src => "//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" }
     %script
@@ -43,19 +39,6 @@
 
     = yield :extra_js
     = javascript_include_tag "application" unless controller.controller_name == "admin"
-
-    - # Google plus
-    %script
-      window.___gcfg = {lang: 'en'};
-      (function() {
-      var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
-      po.src = 'https://apis.google.com/js/plusone.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
-      })();
-
-    - #Twitter
-    %script
-      !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
 
     = render :partial => "/shared/analytics"
 
