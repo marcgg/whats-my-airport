@@ -158,6 +158,12 @@ header{
 
         a{ color: #ffd800; text-decoration: none; }
       }
+
+      .railway{
+        text-align: center;
+        @include text-shadow(#000 1px 1px 1px);
+        margin-bottom: 20px;
+      }
     }
     
     .no-airport{

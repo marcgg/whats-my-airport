@@ -41,6 +41,10 @@
       #map
 
     #description
+      - if @user.airport.is_railway_station?
+        %p.railway
+          = "This is actually a railway station on an airport rail link"
+
       %h3 Airport:
       .lcd
         = @user.airport.name
