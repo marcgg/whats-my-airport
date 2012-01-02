@@ -4,6 +4,5 @@
 
 %meta{:property => "og:title",  :content => dynamic_title(@user.name)}/
 %meta{:property => "og:type",   :content => "website"}
-%meta{:property => "og:url",    :content => root_url}
+%meta{:property => "og:url",    :content => request.url}
 %meta{:property => "og:image",  :content => "#{root_url}assets/social-logo.jpg"}
-
