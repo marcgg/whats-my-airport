@@ -1,11 +1,13 @@
 %table
   %tr
+    %th &nbsp;
     %th Created At
     %th Name
     %th Airport?
     %th Hits
-  - @users.each do |user|
+  - @users.each_with_index do |user, i|
     %tr{ class: cycle("odd", "even") }
+      %td= i
       %td= user.created_at.strftime("%d/%m %H:%M")
       %td= user.name
       %td= user.airport.nil? ? "Missing (#{user.trigram})" : ""
